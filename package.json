@@ -1,5 +1,5 @@
 {
-  "name": "pivot-table",
+  "name": "pivot-table-ts",
   "version": "0.0.1",
   "description": "pivot-table",
   "main": "lib/pivot-table.ts.js",
