@@ -68,7 +68,7 @@ export class PivotTable {
   public data: Group[] = [];
 
   /**
-   * 初始化数据并直接计算结果
+   * Init 初始化数据并直接计算结果
    * @param data
    * @param options
    */
@@ -122,7 +122,7 @@ export class PivotTable {
   }
 
   /**
-   * 组织数据结构
+   * Organize constructions 开始组织数据结构
    * @param originalData
    */
   private organize() {
@@ -135,7 +135,7 @@ export class PivotTable {
   }
 
   /**
-   * 初始化header模版行维度
+   * Init header template 初始化header模版行维度
    */
   private initHeaderRows() {
     const {
@@ -155,7 +155,7 @@ export class PivotTable {
   }
 
   /**
-   * 组织基本数据
+   * Grouping 组织基本数据
    * @param originalData
    */
   private grouping() {
@@ -166,6 +166,9 @@ export class PivotTable {
     }
   }
 
+  /**
+   * Normal grouping 正常组织数据
+   */
   private normalGrouping() {
     let currentGroup: Group | null = null;
     let i = 0;
@@ -192,6 +195,9 @@ export class PivotTable {
     }
   }
 
+  /**
+   * Sorting grouping 排序组织数据
+   */
   private sortGrouping() {
     const groupMap: { [key: string]: Group } = {};
     let currentGroup: Group | null = null;
@@ -215,6 +221,11 @@ export class PivotTable {
     }
   }
 
+  /**
+   * Find insert index 找到新组的插入索引
+   * @param insertGroup 
+   * @returns 
+   */
   private findInsertGroupIndex(insertGroup: Group): number {
     let i = 0;
     let currentRowDimensionIndex = 0;
@@ -241,7 +252,7 @@ export class PivotTable {
   }
 
   /**
-   * 创建一个新的组
+   * Create a new group 创建一个新的组
    * @param group
    * @param record
    * @returns
@@ -253,7 +264,7 @@ export class PivotTable {
   }
 
   /**
-   * 创建列维度模版及数据
+   * Create row template and statistic 创建行维度模版及数据
    * @param group
    * @param record
    */
@@ -268,7 +279,7 @@ export class PivotTable {
   }
 
   /**
-   * 创建列维度模版及数据
+   * Create column template and statistics 创建列维度模版及数据
    * @param group
    * @param record
    */
@@ -313,7 +324,7 @@ export class PivotTable {
   }
 
   /**
-   * 创建值维度
+   * Create statistic column 创建值列
    * @param parent
    * @param group
    * @param record
@@ -354,7 +365,7 @@ export class PivotTable {
   }
 
   /**
-   * 插入数据
+   * Insert statistics 插入数据
    * @param group
    * @param statisticValue
    * @param dataKey
@@ -396,7 +407,7 @@ export class PivotTable {
   }
 
   /**
-   * 查找插入点索引
+   * Find insert index 查找插入点索引
    * @param list
    * @param insertItem
    * @returns
@@ -429,7 +440,7 @@ export class PivotTable {
   }
 
   /**
-   * 判断是否是同一个组的数据
+   * If same group 判断是否是同一个组的数据
    * @param saleModel
    * @returns
    */
@@ -438,7 +449,7 @@ export class PivotTable {
   }
 
   /**
-   * 插入默认数据
+   * Empty data fill 空数据填充
    */
   private insertDefaultStatistic() {
     this.data = this.data.map((item) => ({

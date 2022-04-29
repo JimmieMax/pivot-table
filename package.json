@@ -1,6 +1,6 @@
 {
   "name": "pivot-table-ts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "pivot-table",
   "main": "lib/pivot-table.ts.js",
   "directories": {
